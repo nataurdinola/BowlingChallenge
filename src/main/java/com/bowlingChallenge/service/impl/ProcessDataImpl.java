@@ -70,7 +70,7 @@ public class ProcessDataImpl implements ProcessData {
 		}
 		
 		for (Player player : newData) {
-			int[] scores = sci.scoreCalculation(player.getFrames());
+			ArrayList<Integer> scores = sci.scoreCalculation(player.getFrames());
 			player.setScores(scores);
 		}
 		

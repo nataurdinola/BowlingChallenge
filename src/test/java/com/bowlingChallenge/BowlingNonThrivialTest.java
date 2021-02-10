@@ -1,5 +1,7 @@
 package com.bowlingChallenge;
 
+import static org.junit.Assert.*;
+
 import java.util.ArrayList;
 
 import org.junit.Assert;
@@ -10,9 +12,7 @@ import com.bowlingChallenge.model.Player;
 import com.bowlingChallenge.service.ScoreCalculations;
 import com.bowlingChallenge.service.impl.ScoreCalculationsImpl;
 
-
-
-public class bowlingChallengeTestNonThrivial {
+public class BowlingNonThrivialTest {
 
 	@Test
 	public void test() {
@@ -23,12 +23,14 @@ public class bowlingChallengeTestNonThrivial {
 		frames.add(new Frame(5,5,0,'P'));
 		frames.add(new Frame(6,2,0,'N'));
 		Player player = new Player ("Juan",frames,null);
-		System.out.print("hola");
-	    int[] scores = sci.scoreCalculation(player.getFrames());
-	    int [] compare= {20,35,51,59,0,0,0,0,0,0};
+		ArrayList<Integer>scores = sci.scoreCalculation(player.getFrames());
+		ArrayList<Integer> compare= new ArrayList<Integer>();
+		compare.add(20);
+		compare.add(35);
+		compare.add(51);
+		compare.add(59);
 	   
-	    Assert.assertArrayEquals(compare, scores);
-		
+	    Assert.assertEquals(compare, scores);
 	}
 
 }

@@ -9,7 +9,7 @@ import com.bowlingChallenge.model.Frame;
  */
 public interface ScoreCalculations {
     
-    int[] scoreCalculation(ArrayList<Frame> scores);
+	ArrayList<Integer> scoreCalculation(ArrayList<Frame> scores);
     
     
 }

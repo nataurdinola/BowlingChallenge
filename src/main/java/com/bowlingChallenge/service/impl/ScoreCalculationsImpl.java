@@ -12,10 +12,9 @@ import com.bowlingChallenge.service.ScoreCalculations;
 public class ScoreCalculationsImpl implements ScoreCalculations {
 
 	@Override
-	public int[] scoreCalculation(ArrayList<Frame> frames) {
-		int scores[] = new int[10];
+	public ArrayList<Integer> scoreCalculation(ArrayList<Frame> frames) {
+		ArrayList<Integer> scores = new ArrayList<Integer> ();
 		int score = 0;
-		System.out.print(frames.size());
 		for (int i = 0; i < frames.size(); i++) {
 			if (frames.get(i).getType() == 'S') { // If hits a Strike on the frame
 				if (i < frames.size() - 1 && frames.get(i + 1).getType() == 'S') { // If hits another Strike
@@ -42,10 +41,12 @@ public class ScoreCalculationsImpl implements ScoreCalculations {
 					score += frames.get(i).getBall1() + frames.get(i).getBall2();
 				}
 			}
-			scores[i] = score;
+			scores.add(i,score);
 		}
 
 		return scores;
 	}
+	
+	
 
 }

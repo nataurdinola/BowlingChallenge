@@ -10,9 +10,9 @@ public class Player {
     
     private String name;
     private ArrayList<Frame> frames;
-    private int[] scores;
+    private ArrayList<Integer> scores;
 
-    public Player(String name, ArrayList<Frame> frames, int [] scores) {
+    public Player(String name, ArrayList<Frame> frames, ArrayList<Integer> scores) {
         this.name = name;
         this.frames = frames;
         this.setScores(scores);
@@ -38,12 +38,12 @@ public class Player {
         return frames;
     }
 
-	public int[] getScores() {
+	public ArrayList<Integer> getScores() {
 		return scores;
 	}
 
-	public void setScores(int[] scores) {
-		this.scores = scores;
+	public void setScores(ArrayList<Integer> scores2) {
+		this.scores = scores2;
 	}
 
 }
