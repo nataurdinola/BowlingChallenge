@@ -16,10 +16,10 @@ import com.bowlingChallenge.repository.BowlingDataRepository;
 public class ReadFile implements BowlingDataRepository {
 
 	@Override
-	public ArrayList<HashMap<String, String>> readAndPrint() throws Exception {
+	public ArrayList<HashMap<String, String>> readAndPrint(String filePath) throws Exception {
 		
 		ArrayList<HashMap<String, String>> fullData = new ArrayList<HashMap<String, String>>();
-		try (BufferedReader br = new BufferedReader(new FileReader(ReadFileConstant.FILE_PATH))) 
+		try (BufferedReader br = new BufferedReader(new FileReader(filePath))) 
         {
             String actualLine;
             while ((actualLine = br.readLine()) != null) 
@@ -38,7 +38,7 @@ public class ReadFile implements BowlingDataRepository {
         } 
         catch (IOException e) 
         {
-            e.printStackTrace();
+            System.out.println("File not found");
         }
 		return fullData;
 	}

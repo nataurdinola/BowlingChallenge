@@ -5,6 +5,6 @@ import java.util.HashMap;
 
 public interface BowlingDataRepository {
 	
-	ArrayList<HashMap<String, String>> readAndPrint() throws Exception ;
+	ArrayList<HashMap<String, String>> readAndPrint(String filePath) throws Exception ;
 
 }

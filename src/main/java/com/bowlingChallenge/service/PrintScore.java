@@ -6,5 +6,5 @@ import com.bowlingChallenge.model.Player;
 
 public interface PrintScore {
 
-	void printFinalData (ArrayList<Player> players);
+	void printFinalData (ArrayList<Player> players) throws Exception;
 }
